@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Homework</title>
-</head>
-<body>
-<!--
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homework</title>
+  </head>
+  <body>
+    <!--
 Необязательное задание.
 
 Необходимо от пользователя получить число.
@@ -25,10 +25,15 @@
 
 Уточнение: пользователь всегда вводит корректное положительное целое число.
 -->
-<script>
-  "use strict";
-
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
-</body>
+    <script>
+      "use strict";
+      const numberInput = +prompt("Введите целое положительное число");
+      const number = numberInput % 1000;
+      const hundreds = Math.trunc(number / 100);
+      const tens = Math.trunc((number % 100) / 10);
+      const ones = number - 100 * hundreds - tens * 10;
+      console.log(`В числе ${numberInput} количество сотен: ${hundreds},
+десятков: ${tens}, единиц: ${ones}`);
+    </script>
+  </body>
 </html>
