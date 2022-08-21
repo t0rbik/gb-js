@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homework</title>
+  </head>
+  <body>
+    <!--
+Необязательное задание.
+
+Необходимо реализовать функцию, которая будет принимать первым аргументом
+целое положительное число, в следующих трех аргументах функция принимает слова
+в разных склонениях.
+Функция должна возвращать одно из трех переданных в параметры слов подходящее
+под число, которое передано первым аргументом.
+
+Пример:
+console.log(declinationOfNumber(1, "яблоко", "яблока", "яблок")); // "яблоко"
+console.log(declinationOfNumber(2, "мяч", "мяча", "мячей")); // "мяча"
+console.log(declinationOfNumber(5, "стул", "стула", "стульев")); // "стульев"
+
+Функция должна работать с любым словом и любым целым положительным числом.
+Все аргументы, которые будут передаваться функции будут верны.
+-->
+    <script>
+      "use strict";
+      const applesNumber = 1;
+      showSentence(applesNumber, "яблоко", "яблока", "яблок");
+
+      /**
+       * Функция возвращает предложение с количеством и правильным склонением слова;
+       * @param {number} count Число, для которого надо подобрать склонение
+       * @param {string} one Склонение слова для числа 1
+       * @param {string} two Склонение слова для числа 2
+       * @param {string} five Склонение слова для числа 5
+       * @returns {string} Предложение типа "У меня есть..." с количеством и правильным склонением
+       **/
+      function showSentence(count, one, two, five) {
+        console.log(
+          `У меня есть ${count} ${declinationOfNumber(count, one, two, five)}.`
+        );
+      }
+
+      /**
+       * Функция возвращает правильное склонение слова для полученного числа
+       * @param {number} count Число, для которого надо подобрать склонение
+       * @param {string} one Склонение слова для числа 1
+       * @param {string} two Склонение слова для числа 2
+       * @param {string} five Склонение слова для числа 5
+       * @returns {string} Слово с правильным склонением
+       **/
+      function declinationOfNumber(count, one, two, five) {
+        if (count < 1) return "Число отрицательное";
+        if (count === 1) {
+          return one;
+        } else if (count < 5) {
+          return two;
+        } else {
+          return five;
+        }
+      }
+    </script>
+  </body>
+</html>
