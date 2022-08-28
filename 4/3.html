@@ -30,23 +30,23 @@
 -->
     <script>
       "use strict";
+
       /**
-       * Function get a number from 0 to 999 and returns an object of units, dozens and hundreds
-       * @param {number} inputNumber a number to get the units, dozens and hundres from
-       * @returns {Object} Object with units, dozens and hundreds as a keys and their values as a values
+       * Function get a number from 0 to 999 and returns an object of units,
+       dozens and hundreds
+       * @param {number} inputNumber a number to get the units, dozens and
+       hundres from
+       * @returns {Object} Object with units, dozens and hundreds as keys and
+       their values as values
        **/
       function getDigitsOfNumber(inputNumber) {
-        if (!inputNumber) {
+        if (!Number.isInteger(inputNumber)) {
           console.error("Not acceptable number");
-          return;
-        }
-        if (typeof inputNumber !== typeof 1) {
-          console.error("Enter number");
-          return;
+          return {};
         }
         if (inputNumber < 0 || inputNumber > 999) {
           console.error("Number should be from 0 to 1000");
-          return;
+          return {};
         }
         const hundreds = Math.trunc(inputNumber / 100);
         const dozens = Math.trunc((inputNumber % 100) / 10);

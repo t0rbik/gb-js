@@ -54,8 +54,9 @@
         if (typeof creator !== "string" || typeof text !== "string") {
           throw new Error("Invail type of creator or text");
         }
-        if (creator.length < 3 || text.length < 1)
+        if (creator.length < 3 || text.length < 1) {
           throw new Error("Invalid creator name or text length");
+        }
         this._creator = creator;
         this.text = text;
         this._lastUpdated = new Date();
@@ -72,7 +73,7 @@
       }
 
       AttachedPostES5.prototype = Object.create(PostES5.prototype);
-      AttachedPostES5.prototype.constructor = PostES5;
+      AttachedPostES5.prototype.constructor = AttachedPostES5;
 
       AttachedPostES5.prototype.makeTextHighlighted = function () {
         this.highlighted = true;
@@ -101,23 +102,24 @@
           this.text = text;
           this._lastUpdated = new Date();
         }
+
         edit(text) {
           this.text = text;
           this._lastUpdated = new Date();
         }
+
         getCreator() {
           return this._creator;
         }
+
         getLastUpdated() {
-          this._lastUpdated = new Date();
+          return this._lastUpdated;
         }
       }
 
       class AttachedPostES6 extends PostES6 {
-        constructor(creator, text) {
-          super(creator, text);
-          this.highlighted = false;
-        }
+        highlighted = false;
+
         makeTextHighlighted() {
           this.highlighted = true;
           this._lastUpdated = new Date();
