@@ -49,9 +49,10 @@
   3. Найти все элементы на странице с классом "card-link", которые лежат в
   элементе с классом "card-body" и вывести полученную коллекцию в консоль.
    */
-      const cardBody = document.querySelector(".card-body");
-      const cardLinkArray = cardBody.querySelectorAll(".card-link");
-      console.log(cardLinkArray);
+      const cardBodyLinkArray = document.querySelectorAll(
+        ".card-body .card-link"
+      );
+      console.log(cardBodyLinkArray);
 
       /*
   4. Найти первый попавшийся элемент на странице у которого есть атрибут

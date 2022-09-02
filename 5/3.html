@@ -79,15 +79,12 @@
        */
       document.addEventListener("click", (e) => {
         const target = e.target;
-        if (target.classList.contains("super_element")) {
-          console.log(
-            `Класс "super_element" присутствует в элементе ${target.tagName.toLowerCase()}.`
-          );
-        } else {
-          console.log(
-            `Класс "super_element" отсутсвует в элементе ${target.tagName.toLowerCase()}.`
-          );
-        }
+        const state = target.classList.contains("super_element")
+          ? "присутствует"
+          : "отсутствует";
+        console.log(
+          `Класс "super_element" ${state} в элементе ${target.tagName.toLowerCase()}.`
+        );
       });
 
       /*

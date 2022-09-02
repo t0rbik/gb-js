@@ -99,7 +99,7 @@
        */
       const el = document.querySelector(".btn.dropdown-toggle");
       for (let name of el.getAttributeNames()) {
-        let value = el.getAttribute(name);
+        const value = el.getAttribute(name);
         console.log(`Атрибут "${name}" содержит значение "${value}"`);
       }
     </script>
