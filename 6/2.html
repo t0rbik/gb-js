@@ -69,8 +69,7 @@
       const inputFrom = document.querySelector("#from");
       const span = document.querySelector("span");
       inputFrom.addEventListener("input", (e) => {
-        const text = e.target.value;
-        span.textContent = text;
+        span.textContent = e.target.value;
       });
 
       /*
