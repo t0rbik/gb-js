@@ -90,6 +90,10 @@
        */
       const rangeInputEl = document.querySelector("input");
       const fontSizeChangeDiv = document.querySelector("#inputDiv");
+      const initialFontSize = window
+        .getComputedStyle(fontSizeChangeDiv, null)
+        .getPropertyValue("font-size");
+      rangeInputEl.value = parseInt(initialFontSize);
       rangeInputEl.addEventListener("input", (e) => {
         fontSizeChangeDiv.style.fontSize = e.target.value + "px";
       });
