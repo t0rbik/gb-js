@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+img {
+    height: 250px;
+    object-fit: contain;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.product {
+    box-sizing: border-box;
+    border: 1px solid darkgrey;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    padding: 2px;
+    width: 56px;
+}
+
+.btn_buy {
+    margin-top: 6px;
+}
